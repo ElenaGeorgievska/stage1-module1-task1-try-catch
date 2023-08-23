@@ -21,11 +21,23 @@ public class ParseIntegers {
         String justWords = "";
         while (words.hasNext()) {
             String next = words.next();
-            int number = Integer.parseInt(next);
-            // todo: complete it
+
+            //join strings with space delimeters
+            justWords = justWords.trim() + " " + next;
+            justWords = justWords.replaceAll("\\d", "");
+
+            //parse integers and calculate sum of numbers in the WORDS
+           try{
+                int number = Integer.parseInt(next);
+                sum+= number;
+           }catch (NumberFormatException nfe){
+                nfe.getStackTrace();
+            }catch (ArithmeticException ae){
+                ae.getStackTrace();
+            }
         }
         System.out.println("Sum is " + sum);
-        System.out.println("Just words:" + justWords);
+        System.out.println("Just words: " + justWords);
     }
 }
 
