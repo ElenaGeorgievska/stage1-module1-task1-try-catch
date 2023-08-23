@@ -30,11 +30,13 @@ public class ParseIntegers {
            try{
                 int number = Integer.parseInt(next);
                 sum+= number;
-           }catch (NumberFormatException nfe){
+           }catch (NumberFormatException nfe){   //for parsing string to integer
                 nfe.getStackTrace();
-            }catch (ArithmeticException ae){
+            }catch (ArithmeticException ae){   //for sum operation
                 ae.getStackTrace();
-            }
+            }catch (NullPointerException e) {
+               e.getStackTrace();               //it is for words list
+           }
         }
         System.out.println("Sum is " + sum);
         System.out.println("Just words: " + justWords);
