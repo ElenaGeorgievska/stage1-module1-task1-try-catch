@@ -35,7 +35,7 @@ public class ParseIntegers {
             }catch (ArithmeticException ae){   //for sum operation
                 ae.getStackTrace();
             }catch (NullPointerException e) {
-               e.getStackTrace();               //it is for words list
+               e.getStackTrace();               //it is for words list, which is not null
            }
         }
         System.out.println("Sum is " + sum);
